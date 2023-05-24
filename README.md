@@ -1,6 +1,6 @@
 # Microservice-EAI
 
-Afraayin Faiq Nabiil 
-M. Haikal Andriansyah Putra
-Resti Pradita Utami
-Shafa Dafia Arsy
+1. Afraayin Faiq Nabiil 
+2. M. Haikal Andriansyah Putra
+3. Resti Pradita Utami
+4. Shafa Dafia Arsy
