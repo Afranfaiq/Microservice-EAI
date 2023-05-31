@@ -17,12 +17,16 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('Product','ProductController@index');
+$router->group( ['prefix' => 'api'], function() use ($router){
 
-$router->get('Product/{id}','ProductController@show');
+    $router->get('Product',['uses' => 'ProductController@index']);
 
-$router->delete('Product/{id}','ProductController@destroy');
+    $router->get('Product/{id}',['uses' => 'ProductController@show']);
 
-$router->put('Product/{id}','ProductController@update');
+    $router->delete('Product/{id}',['uses' => 'ProductController@destroy']);
 
-$router->post('Product','ProductController@create');
+    $router->put('Product/{id}',['uses' =>'ProductController@update']);
+
+    $router->post('Product',['uses' =>'ProductController@create']);
+
+} ) ;

@@ -15,9 +15,9 @@ class ProductController extends Controller
     public function index()
     {
         //
-        // echo "<h1> ini adalah index </h1>";
+        $data = Product::all();
 
-        return response()->json("ini adalah index product dari microservice EAI");
+        return response()->json($data);
     }
 
     /**
@@ -49,11 +49,13 @@ class ProductController extends Controller
      * @param  \App\Models\ Product $Product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $Product)
+    public function show($id)
     {
         //
 
-        return response()->json("Menampilkan 1 Data");
+        $data = Product::where('idproduct',$id)->get();
+
+        return response()->json($data);
     }
 
     /**
