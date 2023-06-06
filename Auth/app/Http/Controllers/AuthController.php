@@ -9,6 +9,23 @@ use Firebase\JWT\JWT;
 
 class AuthController extends Controller
 {
+    public function register(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6',
+        ]);
+
+        $user = new User();
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->password = app('hash')->make($request->input('password'));
+        $user->save();
+
+        return response()->json(['message' => 'User registered successfully']);
+    }
+    
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');

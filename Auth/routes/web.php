@@ -22,6 +22,8 @@ $router->group( ['prefix' => 'api'], function() use ($router){
 
     $router->get('Auth',['uses' => 'AuthController@index']);
 
+    $router->post('AuthRegister',['uses' => 'AuthController@register']);
+
     $router->post('AuthLogin',['uses' =>'AuthController@login']);
 
     $router->post('AuthLogout',['uses' =>'AuthController@logout']);
