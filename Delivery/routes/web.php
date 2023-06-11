@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CheckOngkirController;
+use App\Http\Controllers\OngkirController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/ongkir', 'CheckOngkirController@index');
-Route::post('/ongkir', 'CheckOngkirController@check_ongkir');
-Route::get('/province',[CheckOngkirController::class,'getProvince']);
+Route::get('cek-ongkir',[OngkirController::class,'index']);
+Route::post('cek-ongkir',[OngkirController::class,'cekOngkir']);
