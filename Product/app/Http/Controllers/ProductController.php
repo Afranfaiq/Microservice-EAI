@@ -49,11 +49,11 @@ class ProductController extends Controller
      * @param  \App\Models\ Product $Product
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($nama)
     {
         //
 
-        $data = Product::where('idproduct',$id)->get();
+        $data = Product::where('nama',$nama)->get();
 
         return response()->json($data);
     }
